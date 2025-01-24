@@ -15,7 +15,7 @@ const after = []
 for (const movie of movies) {
   if (movie.releaseYear < 2000) {
     before.push(movie)
-  } else if (movie.releaseYear > 2000) {
+  } else {
     after.push(movie)
   }
 }
