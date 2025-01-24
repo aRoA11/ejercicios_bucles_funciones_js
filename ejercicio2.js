@@ -10,5 +10,14 @@ const movies = [
   { title: 'Fight Club', releaseYear: 1999 },
   { title: 'Forrest Gump', releaseYear: 1994 }
 ]
-
-// Añade tu código de bucle aquí
+const before = []
+const after = []
+for (const movie of movies) {
+  if (movie.releaseYear < 2000) {
+    before.push(movie)
+  } else if (movie.releaseYear > 2000) {
+    after.push(movie)
+  }
+}
+console.log(before)
+console.log(after)
