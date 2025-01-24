@@ -11,27 +11,24 @@ const starWarsMovies = [
   { title: 'Rogue One', releaseYear: 2016 },
   { title: 'Solo', releaseYear: 2018 }
 ]
+const categorizedDecade = {}
 
-let decada70s = []
-let decada80s = []
-let decada90s = []
-let decada00s = []
-let decada10s = []
 for (const movie of starWarsMovies) {
+  let decade
   if (movie.releaseYear < 1980) {
-    decada70s.push(movie)
+    decade = 1970
   } else if (movie.releaseYear < 1990) {
-    decada80s.push(movie)
+    decade = 1980
   } else if (movie.releaseYear < 2000) {
-    decada90s.push(movie)
+    decade = 1990
   } else if (movie.releaseYear < 2010) {
-    decada00s.push(movie)
+    decade = 2000
   } else {
-    decada10s.push(movie)
+    decade = 2010
   }
+  if (!categorizedDecade[decade]) {
+    categorizedDecade[decade] = []
+  }
+  categorizedDecade[decade].push(movie)
 }
-console.log('Películas de StarWars de la década de los 70:', decada70s)
-console.log('Películas de StarWars de la década de los 80:', decada80s)
-console.log('Películas de StarWars de la década de los 90:', decada90s)
-console.log('Películas de StarWars de la década de los 00:', decada00s)
-console.log('Películas de StarWars de la década de los 10:', decada10s)
+console.log(categorizedDecade)
